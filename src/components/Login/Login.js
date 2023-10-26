@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useReducer } from "react";
-
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
@@ -59,11 +58,19 @@ const Login = (props) => {
   });
 
   // useEffect(() => {
-  //   setFormIsValid(
-  //     enteredEmail.includes("@") &&
-  //       enteredPassword.trim().length > 6 &&
-  //       enteredCollege.trim().length > 4
-  //   );
+  //   const identifier = setTimeout(() => {
+  //     console.log("Checking form validity");
+  //     setFormIsValid(
+  //       enteredEmail.includes("@") &&
+  //         enteredPassword.trim().length > 6 &&
+  //         enteredCollege.trim().length > 4
+  //     );
+  //   }, 500);
+
+  //   return () => {
+  //     console.log("CLEAN UP Running...");
+  //     clearTimeout(identifier);
+  //   };
   // }, [enteredEmail, enteredPassword, enteredCollege]);
 
   const emailChangeHandler = (event) => {
@@ -73,7 +80,6 @@ const Login = (props) => {
       event.target.value.includes("@") &&
         passwordState.isValid &&
         collgeState.isValid
-
     );
   };
 
